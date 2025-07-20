@@ -37,11 +37,11 @@ except Exception as e:
 # --- LangChain RAG Pipeline Initialization ---
 def initialize_rag_pipeline():
     """
-    This function builds the RAG chain using Google Gemini models.
+    This function loads the pre-built RAG chain using the persisted Chroma database.
     """
     global rag_chain
     
-    print("Initializing RAG pipeline with Google Gemini...")
+    print("Loading pre-built RAG pipeline with Google Gemini...")
 
     google_api_key = os.getenv("GOOGLE_API_KEY")
     if not google_api_key:
@@ -49,38 +49,13 @@ def initialize_rag_pipeline():
         return
 
     llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", google_api_key=google_api_key)
-    # --- PRODUCTION-READY FILE PATH ---
-    # Use an absolute path to the knowledge_base directory
-    knowledge_base_path = os.path.join(BASE_DIR, 'knowledge_base')
-    print(f"DEBUG: Loading knowledge base from: {knowledge_base_path}")
 
-    if not os.path.isdir(knowledge_base_path):
-        print(f"CRITICAL ERROR: The directory '{knowledge_base_path}' was not found.")
-        return
-
-    loader = DirectoryLoader(
-        knowledge_base_path, 
-        glob="**/*.txt", 
-        show_progress=True,
-        loader_cls=TextLoader,
-        loader_kwargs={'encoding': 'utf-8'}
-    )
-    docs = loader.load()
-    if not docs:
-        print("Error: No documents found in the 'knowledge_base' directory.")
-        return
-
-    # --- CHANGE 1: Increased chunk size for better context ---
-    # This makes it more likely that the entire speaker list is retrieved at once.
-    text_splitter = RecursiveCharacterTextSplitter(chunk_size=2000, chunk_overlap=200)
-    splits = text_splitter.split_documents(docs)
-
+    # Load the pre-built vector store from disk
     embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001", google_api_key=google_api_key)
-    vectorstore = Chroma.from_documents(documents=splits, embedding=embeddings)
+    vectorstore = Chroma(persist_directory="./chroma_db", embedding_function=embeddings)
     retriever = vectorstore.as_retriever()
 
-    # --- CHANGE 2: Enhanced Prompt with Stricter Rules ---
-    # This gives the AI very specific instructions on how to format its output.
+    # --- Use the same prompt as before ---
     system_prompt = (
         "You are a helpful and friendly assistant for the Google Cloud Community Day Bhopal event. "
         "Your goal is to answer questions accurately based on the provided context. "
@@ -107,7 +82,7 @@ def initialize_rag_pipeline():
     question_answer_chain = create_stuff_documents_chain(llm, prompt)
     rag_chain = create_retrieval_chain(retriever, question_answer_chain)
 
-    print("Gemini RAG pipeline initialized successfully.")
+    print("Gemini RAG pipeline loaded successfully.")
 
 
 # --- Bot Response Logic ---
