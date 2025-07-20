@@ -135,6 +135,6 @@ def ask_bot():
     bot_reply = get_bot_response(user_message)
     return jsonify({'reply': bot_reply})
 
+initialize_rag_pipeline()
 if __name__ == '__main__':
-    initialize_rag_pipeline()
     app.run(debug=True, port=5000)
