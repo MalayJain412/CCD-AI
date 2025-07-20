@@ -22,6 +22,8 @@ load_dotenv()
 
 # --- Global Variables for LangChain Components ---
 rag_chain = None
+# Get the absolute path of the directory where this script is located
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # --- Load Event Data ---
 event_data = {}
@@ -47,6 +49,14 @@ def initialize_rag_pipeline():
         return
 
     llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", google_api_key=google_api_key)
+    # --- PRODUCTION-READY FILE PATH ---
+    # Use an absolute path to the knowledge_base directory
+    knowledge_base_path = os.path.join(BASE_DIR, 'knowledge_base')
+    print(f"DEBUG: Loading knowledge base from: {knowledge_base_path}")
+
+    if not os.path.isdir(knowledge_base_path):
+        print(f"CRITICAL ERROR: The directory '{knowledge_base_path}' was not found.")
+        return
 
     loader = DirectoryLoader(
         './knowledge_base/', 
