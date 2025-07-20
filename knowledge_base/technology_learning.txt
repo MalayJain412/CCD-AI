@@ -1,0 +1,29 @@
+Q: How will this event help me as a student?
+A: You'll gain practical knowledge beyond your curriculum and get hands-on experience in coding challenges. It's also a fantastic opportunity to connect directly with industry professionals for potential internships or jobs, network with peers from different colleges, and discover exciting career paths you might not have considered.
+
+Q: What is Google Gemini?
+A: Gemini is Google's most advanced family of AI models. It's multimodal, meaning it can understand and work with not just text, but also code, images, and video. As a student, understanding Gemini can help you build powerful AI projects and make you a very attractive candidate for modern tech roles.
+
+Q: What are Gemma and Vertex AI?
+A: Gemma is a family of powerful and lightweight AI models from Google. Vertex AI is Google Cloud's platform where you can easily use, manage, and fine-tune models like Gemma to build your own custom AI applications. Learning this is a direct path to building real-world AI solutions.
+
+Q: What is NotebookLM?
+A: NotebookLM is an AI-powered research and writing assistant from Google. It helps you understand and synthesize complex topics by connecting your notes and sources to a language model. For students, it's an incredible tool for studying and getting insights from your course materials.
+
+Q: What is Kubernetes?
+A: Kubernetes is an open-source system for automating the deployment and scaling of containerized applications. Think of it as a powerful 'operating system' for the cloud. Knowing Kubernetes is a highly in-demand skill for DevOps and Cloud Engineering roles.
+
+Q: What is a "low-code" approach?
+A: Low-code is a way of building applications using visual interfaces and drag-and-drop components instead of writing traditional code. This allows you to build and deploy smart workflows and applications much faster. It's a great skill for rapid prototyping.
+
+Q: What is Google Model Armor?
+A: Google Model Armor is a set of security services on Google Cloud. It's designed to protect AI applications from potential threats, ensuring they are safe and reliable. Understanding this is important for anyone who wants to build production-ready AI systems.
+
+Q: What is an AI Workload?
+A: An "AI Workload" refers to all the computing tasks and processes involved in running an AI application, like training a model or making predictions. Securing this workload means protecting the AI model itself, the data it uses, and the infrastructure it runs on from unauthorized access or attacks.
+
+Q: What is a Cloud Intelligence Dashboard?
+A: This is a tool used in FinOps (Financial Operations for the cloud) that provides a visual overview of a company's cloud spending. It helps teams understand costs, identify savings opportunities, and make smarter financial decisions about their cloud usage.
+
+Q: What is an AI Agentic Application?
+A: This is an advanced type of AI application where the AI acts as an "agent" that can perform tasks autonomously. Instead of just answering a question, it can take actions, use tools, and work towards a goal with multiple steps, much like a human assistant.

@@ -1,0 +1,69 @@
+About the Event
+Q: What is GCCD?
+A: GCCD stands for Google Cloud Community Day. It is a full-day, in-person tech conference organized by the community, for the community. The event is proudly organized by GDG Bhopal. The main goal is to bring together students, developers, and IT professionals to learn about the latest in Google Cloud and AI technology in an interactive experience.
+
+Logistics
+Q: Where is the event? / Event Kaha par he?
+A: The event is at the historic Minto Hall in Bhopal, an iconic landmark known for its great facilities.
+
+Q: When is the event?
+A: The event is on a single day, August 3rd, from 9:00 AM to 5:00 PM.
+
+Q: What is the event schedule?
+A: The day kicks off with registration at 9 AM, followed by an opening keynote at 10 AM. We have multiple session blocks, a lunch and networking break at 1 PM, and a closing ceremony at 5 PM.
+
+Q: Will food be provided?
+A: Yes, your ticket includes a delicious lunch as well as tea and coffee during the designated breaks.
+
+Speaker Information
+Q: Who are the speakers?
+A: This document contains the full list of speakers for GCCD Bhopal.
+
+Speaker Name: Biswanath Giri, Title: Cloud and AI Principal Architect, Company: LTIMindtree, Topic: How to Secure AI Workload, 
+
+Speaker Name: Anand Mehta, Title: Senior FinOps Specialist, Company: Nasdaq, Topic: Cloud Intelligence Dashboard, 
+
+Speaker Name: Ashish Kolarkar, Title: CEO, Company: Datatrack, Topic: NotebookLM to Conquer Complex Topics, 
+
+Speaker Name: Kripesh Adwani, Title: CEO, Company: UpSkillAI, Topic: Mastering Google Gemini: Your All-in-One Career Co-Pilot, 
+
+Speaker Name: Sumit Kumar, Title: Cloud Solution Architect, Company: 66degrees, Topic: Protecting AI Agentic Application with Google Model Armor, 
+
+Speaker Name: Parth Arora, Title: Senior Software Engineer, Company: IBM India, Topic: Kubernetes for Beginners: Your First Step into Cloud-Native, 
+
+Speaker Name: Geeta Kakrani, Title: CEO, Founder, Company: Kanishka IT, Topic: From Pretrained to Powerful: Fine-Tune Gemma on GCP Vertex AI, 
+
+Speaker Name: Jyoti Mishra, Title: SDE-4, Company: Evertz Microsystems, Topic: No server, No stress: Build smart cloud workflows the low code way, 
+
+Speaker Name: Saurabh Mishra, Title: DevOps Lead, Company: TSYS, Topic: Building Next-Gen Intelligent Self-Service on Google Cloud, 
+
+Technology Topics & Learning
+Q: How will this event help me as a student?
+A: You'll gain practical knowledge beyond your curriculum and get hands-on experience in coding challenges. It's also a fantastic opportunity to connect directly with industry professionals for potential internships or jobs, network with peers from different colleges, and discover exciting career paths you might not have considered.
+
+Q: What is Google Gemini?
+A: Gemini is Google's most advanced family of AI models. It's multimodal, meaning it can understand and work with not just text, but also code, images, and video.
+
+Q: What are Gemma and Vertex AI?
+A: Gemma is a family of powerful and lightweight AI models from Google. Vertex AI is Google Cloud's platform where you can easily use, manage, and fine-tune models like Gemma to build your own custom AI applications.
+
+Q: What is NotebookLM?
+A: NotebookLM is an AI-powered research and writing assistant from Google. It helps you understand and synthesize complex topics by connecting your notes and sources to a language model.
+
+Q: What is Kubernetes?
+A: Kubernetes is an open-source system for automating the deployment and scaling of containerized applications. It's a highly in-demand skill for DevOps and Cloud Engineering roles.
+
+Q: What is a "low-code" approach?
+A: Low-code is a way of building applications using visual interfaces and drag-and-drop components instead of writing traditional code. It allows you to build applications much faster.
+
+Q: What is Google Model Armor?
+A: Google Model Armor is a set of security services on Google Cloud designed to protect AI applications from potential threats.
+
+Q: What is an AI Workload?
+A: An "AI Workload" refers to all the computing tasks involved in running an AI application. Securing this workload means protecting the AI model, the data it uses, and the infrastructure it runs on.
+
+Q: What is a Cloud Intelligence Dashboard?
+A: This is a tool used in FinOps (Financial Operations for the cloud) that provides a visual overview of a company's cloud spending and helps teams make smarter financial decisions.
+
+Q: What is an AI Agentic Application?
+A: This is an advanced type of AI application where the AI acts as an "agent" that can perform tasks autonomously, like a human assistant.

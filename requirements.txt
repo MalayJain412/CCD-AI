@@ -1,0 +1,21 @@
+---for ollama---
+
+Flask
+Flask-Cors
+langchain
+langchain-community
+langchain-chroma
+ollama
+beautifulsoup4
+
+---for google gemini---
+Flask
+Flask-Cors
+langchain
+langchain-community
+langchain-chroma
+langchain-google-genai
+google-generativeai
+python-dotenv
+beautifulsoup4
+unstructured
