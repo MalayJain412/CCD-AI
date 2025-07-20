@@ -59,7 +59,7 @@ def initialize_rag_pipeline():
         return
 
     loader = DirectoryLoader(
-        './knowledge_base/', 
+        knowledge_base_path, 
         glob="**/*.txt", 
         show_progress=True,
         loader_cls=TextLoader,
