@@ -1,0 +1,173 @@
+{
+    "speakers": [
+      {
+        "name": "Biswanath Giri",
+        "title": "Cloud and AI Principal Architect",
+        "company": "LTIMindtree",
+        "topic": "How to Secure AI Workload",
+        "linkedin": "https://www.linkedin.com/in/bgirigcloud/"
+      },
+      {
+        "name": "Anand Mehta",
+        "title": "Senior FinOps Specialist",
+        "company": "Nasdaq",
+        "topic": "Cloud Intelligence Dashboard",
+        "linkedin": "https://www.linkedin.com/in/anandmehtafinops/"
+      },
+      {
+        "name": "Ashish Kolarkar",
+        "title": "CEO",
+        "company": "Datatrack",
+        "topic": "NotebookLM to Conquer Complex Topics",
+        "linkedin": "https://www.linkedin.com/in/ashishkolarkar/"
+      },
+      {
+        "name": "Kripesh Adwani",
+        "title": "CEO",
+        "company": "UpSkillAI",
+        "topic": "Mastering Google Gemini: Your All-in-One Career Co-Pilot",
+        "linkedin": "https://www.linkedin.com/in/kripeshadwani/"
+      },
+      {
+        "name": "Sumit Kumar",
+        "title": "Cloud Solution Architect",
+        "company": "66degrees",
+        "topic": "Protecting AI Agentic Application with Google Model Armor",
+        "linkedin": "https://ccd.bhopal.dev/linkedin.com/in/sumit-kumar-ab2059132"
+      },
+      {
+        "name": "Parth Arora",
+        "title": "Senior Software Engineer",
+        "company": "IBM India",
+        "topic": "Kubernetes for Beginners: Your First Step into Cloud-Native",
+        "linkedin": "https://www.linkedin.com/in/parth-arora-1449ab14a/"
+      },
+      {
+        "name": "Geeta Kakrani",
+        "title": "CEO, Founder",
+        "company": "Kanishka IT",
+        "topic": "From Pretrained to Powerful: Fine-Tune Gemma on GCP Vertex AI",
+        "linkedin": "https://www.linkedin.com/in/geetakakrani/"
+      },
+      {
+        "name": "Jyoti Mishra",
+        "title": "SDE-4",
+        "company": "Evertz Microsystems",
+        "topic": "No server, No stress: Build smart cloud workflows the low code way",
+        "linkedin": "https://in.linkedin.com/in/jyotim29"
+      },
+      {
+        "name": "Saurabh Mishra",
+        "title": "DevOps Lead",
+        "company": "TSYS",
+        "topic": "Building Next-Gen Intelligent Self-Service on Google Cloud",
+        "linkedin": "https://www.linkedin.com/in/connectsaurabhmishra/"
+      }
+    ],
+    "faq": [
+      {
+        "keywords": ["gccd", "what is", "about event"],
+        "answer": "GCCD stands for Google Cloud Community Day. It's a full-day, in-person tech conference run by the community, for the community, organized by GDG Bhopal. The main goal is to bring together students, developers, and IT professionals to learn about the latest in Google Cloud and AI technology in an interactive experience."
+      },
+      {
+        "keywords": ["organizer", "who is organizing"],
+        "answer": "The event is proudly organized by GDG Bhopal (Google Developer Group Bhopal)."
+      },
+      {
+        "keywords": ["who should attend", "for me"],
+        "answer": "The event is perfect for students, developers, IT professionals, startup founders, and anyone with a passion for technology, especially Google Cloud and AI."
+      },
+      {
+        "keywords": ["where", "location", "venue"],
+        "answer": "The event is at the historic Minto Hall in Bhopal, an iconic landmark known for its great facilities."
+      },
+      {
+        "keywords": ["date", "time", "when", "duration"],
+        "answer": "The event is on a single day, August 3rd, from 9:00 AM to 5:00 PM."
+      },
+      {
+        "keywords": ["agenda", "schedule"],
+        "answer": "The day kicks off with registration at 9 AM, followed by an opening keynote at 10 AM. We have multiple session blocks, a lunch and networking break at 1 PM, and a closing ceremony at 5 PM."
+      },
+      {
+        "keywords": ["food", "lunch"],
+        "answer": "Yes, your ticket includes a delicious lunch as well as tea and coffee during the designated breaks."
+      },
+      {
+        "keywords": ["help student", "benefit"],
+        "answer": "You'll gain practical knowledge beyond your curriculum and get hands-on experience in coding challenges. It's also a fantastic opportunity to connect directly with industry professionals for potential internships or jobs, network with peers from different colleges, and discover exciting career paths you might not have considered."
+      },
+      {
+          "keywords": ["gemini"],
+          "answer": "Gemini is Google's most advanced family of AI models. It's multimodal, meaning it can understand and work with not just text, but also code, images, and video. As a student, understanding Gemini can help you build powerful AI projects and make you a very attractive candidate for modern tech roles."
+      },
+      {
+          "keywords": ["kubernetes"],
+          "answer": "Kubernetes is an open-source system for automating the deployment and scaling of containerized applications. Think of it as a powerful 'operating system' for the cloud. Knowing Kubernetes is a highly in-demand skill for DevOps and Cloud Engineering roles."
+      },
+      {
+          "keywords": ["gemma", "vertex ai"],
+          "answer": "Gemma is a family of powerful and lightweight AI models from Google. Vertex AI is Google Cloud's platform where you can easily use, manage, and fine-tune models like Gemma to build your own custom AI applications. Learning this is a direct path to building real-world AI solutions."
+      },
+      {
+          "keywords": ["notebooklm"],
+          "answer": "NotebookLM is an AI-powered research and writing assistant from Google. It helps you understand and synthesize complex topics by connecting your notes and sources to a language model. For students, it's an incredible tool for studying and getting insights from your course materials."
+      },
+      {
+          "keywords": ["low-code"],
+          "answer": "Low-code is a way of building applications using visual interfaces and drag-and-drop components instead of writing traditional code. This allows you to build and deploy smart workflows and applications much faster. It's a great skill for rapid prototyping."
+      },
+      {
+          "keywords": ["model armor"],
+          "answer": "Google Model Armor is a set of security services on Google Cloud. It's designed to protect AI applications from potential threats, ensuring they are safe and reliable. Understanding this is important for anyone who wants to build production-ready AI systems."
+      },
+      {
+          "keywords": ["ai workload"],
+          "answer": "An 'AI Workload' refers to all the computing tasks and processes involved in running an AI application, like training a model or making predictions. Securing this workload means protecting the AI model itself, the data it uses, and the infrastructure it runs on from unauthorized access or attacks."
+      },
+      {
+          "keywords": ["cloud intelligence dashboard"],
+          "answer": "This is a tool used in FinOps (Financial Operations for the cloud) that provides a visual overview of a company's cloud spending. It helps teams understand costs, identify savings opportunities, and make smarter financial decisions about their cloud usage."
+      },
+      {
+          "keywords": ["agentic application"],
+          "answer": "This is an advanced type of AI application where the AI acts as an 'agent' that can perform tasks autonomously. Instead of just answering a question, it can take actions, use tools, and work towards a goal with multiple steps, much like a human assistant."
+      },
+      {
+          "keywords": ["register", "ticket"],
+          "answer": "You can register by clicking any of the 'Register Now' buttons on our official website. This will take you to our ticketing partner's page."
+      },
+      {
+          "keywords": ["cost", "price"],
+          "answer": "We have different ticket tiers for students and professionals. Please check the registration page on the official website for the most up-to-date pricing."
+      },
+      {
+          "keywords": ["what's included", "ticket price"],
+          "answer": "Your ticket includes access to all sessions, a welcome kit with cool swag, lunch, and tea/coffee during the breaks."
+      },
+      {
+          "keywords": ["wi-fi", "internet"],
+          "answer": "Yes, complimentary Wi-Fi will be available for all attendees. The network details will be provided at the registration desk."
+      },
+      {
+          "keywords": ["what to bring", "bring with me"],
+          "answer": "We recommend bringing a notebook, a pen, and your enthusiasm! You might also want to bring a laptop for any hands-on workshops. Don't forget your digital ticket for check-in."
+      },
+      {
+          "keywords": ["dress code"],
+          "answer": "There is no strict dress code. Business casual or smart casual is a great choice. Wear whatever you feel comfortable in!"
+      },
+      {
+          "keywords": ["networking"],
+          "answer": "We have dedicated networking breaks during lunch and high tea. The entire event is designed to be interactive, so feel free to connect with speakers and fellow attendees between sessions!"
+      },
+      {
+          "keywords": ["code of conduct"],
+          "answer": "Yes, absolutely. We are committed to providing a safe, respectful, and inclusive environment for everyone. The full Code of Conduct is available on our website."
+      },
+      {
+          "keywords": ["recordings", "recorded"],
+          "answer": "We are planning to record the key sessions. Recordings will be made available on the GDG Bhopal YouTube channel after the event."
+      }
+    ]
+  }
