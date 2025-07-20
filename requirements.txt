@@ -1,4 +1,3 @@
----for google gemini---
 Flask
 Flask-Cors
 langchain
