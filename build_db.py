@@ -19,9 +19,9 @@ def build_vector_store():
     print("--- Starting Vector Store Build Process ---")
     load_dotenv()
 
-    google_api_key = os.getenv("GOOGLE_API_KEY")
+    google_api_key = os.getenv("GOOGLE_API_KEY_1")
     if not google_api_key:
-        print("CRITICAL ERROR: GOOGLE_API_KEY not found in environment. Build cannot proceed.")
+        print("CRITICAL ERROR: GOOGLE_API_KEY_1 not found in environment. Build cannot proceed.")
         exit(1)
     else:
         print("SUCCESS: GOOGLE_API_KEY loaded successfully.")
