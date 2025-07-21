@@ -53,6 +53,14 @@ def initialize_rag_pipeline(api_key):
     
     print(f"Initializing RAG pipeline with key index {current_key_index}...")
     
+    google_api_key = os.getenv("GOOGLE_API_KEY")
+    if not google_api_key:
+        print("Error: GOOGLE_API_KEY not found in .env file.")
+        return
+    
+    # --- ADDED FOR DEBUGGING: Print the key being used ---
+    print(f"DEBUG: Initializing pipeline with key ending in ...{google_api_key[-4:]}")
+    
     if not os.path.exists(CHROMA_DB_PATH):
         print(f"CRITICAL ERROR: Chroma DB not found at {CHROMA_DB_PATH}.")
         return False
