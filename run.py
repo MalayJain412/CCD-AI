@@ -51,21 +51,19 @@ def initialize_rag_pipeline(api_key):
     """
     global rag_chain
     
-    print(f"Initializing RAG pipeline with key index {current_key_index}...")
-    
-    google_api_key = os.getenv("GOOGLE_API_KEY")
-    if not google_api_key:
-        print("Error: GOOGLE_API_KEY not found in .env file.")
-        return
-    
-    # --- ADDED FOR DEBUGGING: Print the key being used ---
-    print(f"DEBUG: Initializing pipeline with key ending in ...{google_api_key[-4:]}")
+    # CORRECTED: Use the provided api_key argument
+    if not api_key:
+        print("Error: A valid API key was not provided to initialize the pipeline.")
+        return False
+        
+    print(f"Initializing RAG pipeline with key ending in ...{api_key[-4:]}")
     
     if not os.path.exists(CHROMA_DB_PATH):
         print(f"CRITICAL ERROR: Chroma DB not found at {CHROMA_DB_PATH}.")
         return False
 
     try:
+        # CORRECTED: Use the api_key passed into this function
         llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", google_api_key=api_key)
         embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001", google_api_key=api_key)
         vectorstore = Chroma(persist_directory=CHROMA_DB_PATH, embedding_function=embeddings)
