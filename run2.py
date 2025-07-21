@@ -1,18 +1,19 @@
-# run.py - AI Chatbot Backend with API Key Fallback Logic
+# run.py - AI Chatbot Backend using a PRE-BUILT RAG pipeline with API key rotation
 
 import os
-import json
 from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
 from dotenv import load_dotenv
-from google.api_core import exceptions as google_exceptions
 
 # LangChain Imports
 from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings
-from langchain_chroma import Chroma
+from langchain_community.vectorstores import Chroma
 from langchain.chains import create_retrieval_chain
 from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain_core.prompts import ChatPromptTemplate
+
+# Import for Google API exceptions
+import google.api_core.exceptions as google_exceptions
 
 # --- Setup ---
 app = Flask(__name__)
@@ -21,7 +22,7 @@ load_dotenv()
 
 # --- Global Variables ---
 rag_chain = None
-CHROMA_DB_PATH = "./chroma_db"
+CHROMA_DB_PATH = "./chroma_db" # Path to the pre-built database
 response_cache = {}
 api_keys = []
 current_key_index = 0
@@ -47,45 +48,66 @@ def load_api_keys():
 # --- LangChain RAG Pipeline Initialization ---
 def initialize_rag_pipeline(api_key):
     """
-    This function builds the RAG chain using a specific Google Gemini API key.
+    This function now LOADS the pre-built RAG chain from the persisted Chroma database.
+    This is a very fast operation.
     """
     global rag_chain
     
-    print(f"Initializing RAG pipeline with key index {current_key_index}...")
+    print("Loading pre-built RAG pipeline with Google Gemini...")
+
+    if not api_key:
+        print("Error: No valid API key provided.")
+        return False
     
     if not os.path.exists(CHROMA_DB_PATH):
-        print(f"CRITICAL ERROR: Chroma DB not found at {CHROMA_DB_PATH}.")
+        print(f"CRITICAL ERROR: Chroma DB not found at {CHROMA_DB_PATH}. Please ensure the build_db.py script ran successfully during deployment.")
         return False
 
     try:
+        # 1. Initialize the LLM
         llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", google_api_key=api_key)
+
+        # 2. Initialize the embeddings model
         embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001", google_api_key=api_key)
+
+        # 3. Load the Chroma vector store from disk
         vectorstore = Chroma(persist_directory=CHROMA_DB_PATH, embedding_function=embeddings)
+
+        # 4. Create the retriever
         retriever = vectorstore.as_retriever()
 
+        # 5. Create the prompt template (same as before)
         system_prompt = (
             "You are a helpful and friendly AI assistant for the Google Cloud Community Day Bhopal event. "
             "Your goal is to answer questions accurately based on the provided context. "
             "You must follow these rules:\n"
-            "1.  **CRITICAL RULE: When asked for a list of speakers, you MUST list ALL speakers found in the context. Do not summarize or shorten the list.**\n"
-            "2.  **Always use Markdown for formatting.** Use bullet points (`-` or `*`) for lists and bold (`**text**`) for names and important terms.\n"
+            "1.  **CRITICAL RULE: When asked for a list of speakers ('who are the speakers', 'speakers kon kon he', etc.), you MUST list ALL speakers found in the context. Do not summarize or shorten the list.**\n"
+            "2.  **Always use Markdown for formatting.** Use bullet points (`-`) for lists and bold (`**text**`) for names, titles, and important terms. For the speaker list, format each entry as: `- **Speaker Name**: Title at Company, speaking on \"Topic\"`.\n"
             "3.  If a user asks for a speaker's social media like LinkedIn, you MUST reply with: 'For the most up-to-date professional profiles, please check the official event website.' Do not provide the direct link.\n"
-            "4.  If the user asks in a mix of Hindi and English (Hinglish), understand it and reply in clear, simple English.\n"
+            "4.  If the user asks in a mix of Hindi and English (Hinglish), like 'event kaha par he', understand it and reply in clear, simple English.\n"
             "5.  If asked about the event location, provide the answer from the context and also add: 'You can find a direct link to the location at the bottom of the chat window.'\n"
             "6.  If asked if the event is free, you MUST reply: 'The event requires a ticket for entry. For details on pricing and registration, please visit the official website.'\n"
-            "7.  If the user says 'thank you' or a similar phrase of gratitude, you MUST reply with: 'You\\'re welcome! See you at GCCD Bhopal!'\n"
-            "8.  If the context does not contain the answer, politely say: 'I don\\'t have that specific information.'\n"
+            "7.  If the user says 'thank you' or a similar phrase of gratitude, you MUST reply with: 'You're welcome! See you at GCCD Bhopal!'\n"
+            "8.  If the context does not contain the answer to a question, politely say: 'I don't have that specific information, but I can tell you about speakers, the agenda, or the venue.'\n"
             "9.  Keep your answers concise but complete."
             "\n\n"
             "Context:\n{context}"
         )
-        prompt = ChatPromptTemplate.from_messages([("system", system_prompt), ("human", "{input}")])
+        prompt = ChatPromptTemplate.from_messages(
+            [
+                ("system", system_prompt),
+                ("human", "{input}"),
+            ]
+        )
+
+        # 6. Create the RAG chain (same as before)
         question_answer_chain = create_stuff_documents_chain(llm, prompt)
         rag_chain = create_retrieval_chain(retriever, question_answer_chain)
-        print("Gemini RAG pipeline initialized successfully.")
+
+        print("Gemini RAG pipeline loaded successfully.")
         return True
     except Exception as e:
-        print(f"Error initializing RAG pipeline with key index {current_key_index}: {e}")
+        print(f"Error initializing RAG pipeline: {e}")
         return False
 
 # --- Flask API Endpoints ---
@@ -141,7 +163,7 @@ def ask_bot():
     return jsonify({'reply': 'Sorry, all our AI services are currently busy. Please try again in a few moments.'}), 503
 
 # --- SCRIPT EXECUTION ---
-load_api_keys() 
+load_api_keys()
 if api_keys:
     initialize_rag_pipeline(api_keys[current_key_index])
 
