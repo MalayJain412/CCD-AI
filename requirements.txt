@@ -9,5 +9,5 @@ python-dotenv
 beautifulsoup4
 unstructured
 gunicorn
-Flask-SQLAlchemy==3.0.5
-mysql-connector-python==8.2.0
+Flask-SQLAlchemy
+mysql-connector-python
