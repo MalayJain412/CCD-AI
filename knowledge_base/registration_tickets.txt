@@ -6,3 +6,30 @@ A: We have different ticket tiers for students and professionals. Please check t
 
 Q: What's included in the ticket price?
 A: Your ticket includes access to all sessions, a welcome kit with cool swag, lunch, and tea/coffee during the breaks.
+
+Q: Are there any discount tickets?
+A: What collage or community do you belog to?
+
+Q: I belong from {collage or commuity} .
+A: You can apply following coupen code:
+Code Name
+ORIENTAL25
+SAGE25
+WPBHOPAL25
+AIESEC25
+JNCT25
+GDGINDORE25
+LNCTE25
+BHOPALDOTDEV25
+TECHHELP4U25
+SIRT25
+MITS-DU25
+DAO25
+OIST25
+SOIT25
+SISTEC25
+GYANGANGA25
+VIT25
+LNCTS25
+LNCT25
+COMMUNITY25

@@ -1,4 +1,4 @@
-# run.py - AI Chatbot Backend with External Config
+# run.py - AI Chatbot Backend with Conversation Turn History
 
 import os
 import json
@@ -8,8 +8,8 @@ from dotenv import load_dotenv
 from google.api_core import exceptions as google_exceptions
 from datetime import datetime
 
-# NEW: Import the Config class
-from config import Config
+# Import the db object and the new Conversation model
+from models import db, Conversation
 from models import db, Conversation
 
 # LangChain Imports
@@ -28,7 +28,6 @@ load_dotenv()
 
 # Load configuration from the Config object
 app.config.from_object(Config)
-
 # Initialize the database with the app
 db.init_app(app)
 
@@ -37,7 +36,6 @@ rag_chain = None
 CHROMA_DB_PATH = "./chroma_db"
 api_keys = []
 current_key_index = 0
-session_histories = {}
 
 # --- Load API Keys ---
 def load_api_keys():
@@ -74,27 +72,8 @@ def initialize_rag_pipeline(api_key):
         ])
         history_aware_retriever = create_history_aware_retriever(llm, retriever, contextualize_q_prompt)
 
-        # UPDATED: Re-introduced the detailed system prompt with your new rules
-        system_prompt = (
-            "You are a helpful and friendly AI assistant for the Google Cloud Community Day Bhopal event. "
-            "Your goal is to answer questions accurately based on the provided context. "
-            "You must follow these rules:\n"
-            "1.  **CRITICAL RULE: When asked for a list of speakers, you MUST list ALL speakers found in the context. Do not summarize or shorten the list.**\n"
-            "2.  **Always use Markdown for formatting.** Use bullet points (`-` or `*`) for lists and bold (`**text**`) for names, titles, and important terms.\n"
-            "3.  If a user asks for a speaker's social media like LinkedIn, you MUST reply with: 'For the most up-to-date professional profiles, please check the official event website.' Do not provide the direct link.\n"
-            "4.  If the user asks in a mix of Hindi and English (Hinglish), understand it and reply in clear, simple English.\n"
-            "5.  If asked about the event location, provide the answer from the context and also add: 'You can find a direct link to the location at the bottom of the chat window.'\n"
-            "6.  If asked if the event is free, you MUST reply: 'The event requires a ticket for entry. For details on pricing and registration, please visit the official website.'\n"
-            "7.  If the user says 'thank you' or a similar phrase of gratitude, you MUST reply with: 'You\\'re welcome! See you at GCCD Bhopal!'\n"
-            "8.  If asked for a discount ticket, ask for their college or community. If the context mentions a ticket for that group, provide the details and mention a 25% discount.\n"
-            "9.  If the context does not contain the answer to a question, politely say: 'I don\\'t have that specific information.'\n"
-            "10. Keep your answers concise but complete."
-            "\n\n"
-            "Context:\n{context}"
-        )
-
         qa_prompt = ChatPromptTemplate.from_messages([
-            ("system", system_prompt),
+            ("system", "You are a helpful and friendly assistant for the Google Cloud Community Day Bhopal event.\n\nContext:\n{context}"),
             MessagesPlaceholder("chat_history"),
             ("human", "{input}")
         ])
@@ -125,11 +104,6 @@ def ask_bot():
     if not user_message or not session_id:
         return jsonify({'error': 'Missing message or session_id'}), 400
 
-    # Save user message to DB
-    user_chat = Conversation(session_id=session_id, question=user_message, answer="") # Save question first
-    db.session.add(user_chat)
-    db.session.commit()
-
     chat_history_for_chain = []
     for msg in client_history:
         content = msg.get('message')
@@ -153,8 +127,13 @@ def ask_bot():
             bot_reply = 'An error occurred. Please try again.'
             break
     
-    # Update the conversation turn with the bot's answer
-    user_chat.answer = bot_reply
+    # NEW: Save the entire conversation turn to the DB in a single operation
+    conversation_turn = Conversation(
+        session_id=session_id,
+        question=user_message,
+        answer=bot_reply
+    )
+    db.session.add(conversation_turn)
     db.session.commit()
 
     return jsonify({'reply': bot_reply})
@@ -166,13 +145,14 @@ def get_chat_history():
     if not session_id:
         return jsonify({'error': 'session_id is required'}), 400
     
+    # Query the new Conversation table
     turns = Conversation.query.filter_by(session_id=session_id).order_by(Conversation.timestamp).all()
     
+    # "Unroll" the data back into a linear chat format for the frontend
     history = []
     for turn in turns:
         history.append({'sender': 'user', 'message': turn.question})
-        if turn.answer: # Only add bot answer if it exists
-            history.append({'sender': 'bot', 'message': turn.answer})
+        history.append({'sender': 'bot', 'message': turn.answer})
         
     return jsonify({'history': history})
 
@@ -181,6 +161,7 @@ load_api_keys()
 if api_keys:
     initialize_rag_pipeline(api_keys[current_key_index])
 
+# Create database tables if they don't exist
 with app.app_context():
     db.create_all()
 

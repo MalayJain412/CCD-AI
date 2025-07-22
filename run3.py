@@ -1,4 +1,4 @@
-# run.py - AI Chatbot Backend with External Config
+# run.py
 
 import os
 import json
@@ -6,13 +6,7 @@ from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
 from dotenv import load_dotenv
 from google.api_core import exceptions as google_exceptions
-from datetime import datetime
 
-# NEW: Import the Config class
-from config import Config
-from models import db, Conversation
-
-# LangChain Imports
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_chroma import Chroma
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
@@ -21,25 +15,16 @@ from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_core.messages import HumanMessage, AIMessage
 
-# --- Setup ---
 app = Flask(__name__)
 CORS(app)
 load_dotenv()
 
-# Load configuration from the Config object
-app.config.from_object(Config)
-
-# Initialize the database with the app
-db.init_app(app)
-
-# --- Global Variables ---
 rag_chain = None
 CHROMA_DB_PATH = "./chroma_db"
 api_keys = []
 current_key_index = 0
 session_histories = {}
 
-# --- Load API Keys ---
 def load_api_keys():
     global api_keys
     i = 1
@@ -55,12 +40,12 @@ def load_api_keys():
     else:
         print(f"SUCCESS: Loaded {len(api_keys)} API key(s).")
 
-# --- LangChain RAG Pipeline Initialization ---
 def initialize_rag_pipeline(api_key):
     global rag_chain
     if not os.path.exists(CHROMA_DB_PATH):
         print(f"CRITICAL ERROR: Chroma DB not found at {CHROMA_DB_PATH}.")
         return False
+
     try:
         llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", google_api_key=api_key)
         embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001", google_api_key=api_key)
@@ -68,36 +53,19 @@ def initialize_rag_pipeline(api_key):
         retriever = vectorstore.as_retriever()
 
         contextualize_q_prompt = ChatPromptTemplate.from_messages([
-            ("system", "Given a chat history and the latest user question which might reference context in the chat history, formulate a standalone question which can be understood without the chat history."),
+            ("system", "Given a chat history and the latest user question which might reference context in the chat history, "
+                       "formulate a standalone question which can be understood without the chat history."),
             MessagesPlaceholder("chat_history"),
             ("human", "{input}")
         ])
         history_aware_retriever = create_history_aware_retriever(llm, retriever, contextualize_q_prompt)
 
-        # UPDATED: Re-introduced the detailed system prompt with your new rules
-        system_prompt = (
-            "You are a helpful and friendly AI assistant for the Google Cloud Community Day Bhopal event. "
-            "Your goal is to answer questions accurately based on the provided context. "
-            "You must follow these rules:\n"
-            "1.  **CRITICAL RULE: When asked for a list of speakers, you MUST list ALL speakers found in the context. Do not summarize or shorten the list.**\n"
-            "2.  **Always use Markdown for formatting.** Use bullet points (`-` or `*`) for lists and bold (`**text**`) for names, titles, and important terms.\n"
-            "3.  If a user asks for a speaker's social media like LinkedIn, you MUST reply with: 'For the most up-to-date professional profiles, please check the official event website.' Do not provide the direct link.\n"
-            "4.  If the user asks in a mix of Hindi and English (Hinglish), understand it and reply in clear, simple English.\n"
-            "5.  If asked about the event location, provide the answer from the context and also add: 'You can find a direct link to the location at the bottom of the chat window.'\n"
-            "6.  If asked if the event is free, you MUST reply: 'The event requires a ticket for entry. For details on pricing and registration, please visit the official website.'\n"
-            "7.  If the user says 'thank you' or a similar phrase of gratitude, you MUST reply with: 'You\\'re welcome! See you at GCCD Bhopal!'\n"
-            "8.  If asked for a discount ticket, ask for their college or community. If the context mentions a ticket for that group, provide the details and mention a 25% discount.\n"
-            "9.  If the context does not contain the answer to a question, politely say: 'I don\\'t have that specific information.'\n"
-            "10. Keep your answers concise but complete."
-            "\n\n"
-            "Context:\n{context}"
-        )
-
         qa_prompt = ChatPromptTemplate.from_messages([
-            ("system", system_prompt),
+            ("system", "You are a helpful and friendly assistant for the Google Cloud Community Day Bhopal event.\n\nContext:\n{context}"),
             MessagesPlaceholder("chat_history"),
             ("human", "{input}")
         ])
+
         question_answer_chain = create_stuff_documents_chain(llm, qa_prompt)
         rag_chain = create_retrieval_chain(history_aware_retriever, question_answer_chain)
         print("Gemini RAG pipeline initialized successfully.")
@@ -106,7 +74,6 @@ def initialize_rag_pipeline(api_key):
         print(f"Error initializing RAG pipeline: {e}")
         return False
 
-# --- Flask API Endpoints ---
 @app.route('/')
 def home():
     return render_template('index.html')
@@ -125,10 +92,8 @@ def ask_bot():
     if not user_message or not session_id:
         return jsonify({'error': 'Missing message or session_id'}), 400
 
-    # Save user message to DB
-    user_chat = Conversation(session_id=session_id, question=user_message, answer="") # Save question first
-    db.session.add(user_chat)
-    db.session.commit()
+    if session_id not in session_histories:
+        session_histories[session_id] = []
 
     chat_history_for_chain = []
     for msg in client_history:
@@ -138,51 +103,30 @@ def ask_bot():
         else:
             chat_history_for_chain.append(AIMessage(content=content))
 
-    bot_reply = "Sorry, all our AI services are currently busy."
     max_retries = len(api_keys)
     for _ in range(max_retries):
         try:
             response = rag_chain.invoke({"input": user_message, "chat_history": chat_history_for_chain})
             bot_reply = response.get("answer", "I couldn't find an answer to that.")
-            break # Success
+
+            session_histories[session_id].append(HumanMessage(content=user_message))
+            session_histories[session_id].append(AIMessage(content=bot_reply))
+            session_histories[session_id] = session_histories[session_id][-8:]  # Keep last 4 turns
+
+            return jsonify({'reply': bot_reply})
+
         except google_exceptions.ResourceExhausted:
             current_key_index = (current_key_index + 1) % len(api_keys)
             initialize_rag_pipeline(api_keys[current_key_index])
         except Exception as e:
             print(f"Unexpected error: {e}")
-            bot_reply = 'An error occurred. Please try again.'
-            break
-    
-    # Update the conversation turn with the bot's answer
-    user_chat.answer = bot_reply
-    db.session.commit()
+            return jsonify({'reply': 'An error occurred. Please try again.'}), 500
 
-    return jsonify({'reply': bot_reply})
+    return jsonify({'reply': 'All AI services are currently busy.'}), 503
 
-@app.route('/history', methods=['POST'])
-def get_chat_history():
-    data = request.json
-    session_id = data.get('session_id')
-    if not session_id:
-        return jsonify({'error': 'session_id is required'}), 400
-    
-    turns = Conversation.query.filter_by(session_id=session_id).order_by(Conversation.timestamp).all()
-    
-    history = []
-    for turn in turns:
-        history.append({'sender': 'user', 'message': turn.question})
-        if turn.answer: # Only add bot answer if it exists
-            history.append({'sender': 'bot', 'message': turn.answer})
-        
-    return jsonify({'history': history})
-
-# --- SCRIPT EXECUTION ---
 load_api_keys()
 if api_keys:
     initialize_rag_pipeline(api_keys[current_key_index])
-
-with app.app_context():
-    db.create_all()
 
 if __name__ == '__main__':
     app.run(debug=True, use_reloader=False, port=5000)
