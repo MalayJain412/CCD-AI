@@ -1,210 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cloud Community Day - AI Guide</title>
-  <link rel="icon" href="https://ccd.bhopal.dev/favicon.ico" type="image/x-icon" />
-  <link rel="shortcut icon" href="https://ccd.bhopal.dev/favicon.ico" type="image/x-icon" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet" />
-  <style>
-    body { font-family: 'Inter', sans-serif; }
-    .chat-message {
-      max-width: 85%;
-      padding: 0.75rem 1.25rem;
-      border-radius: 1.25rem;
-      margin-bottom: 0.5rem;
-      line-height: 1.5;
-      word-wrap: break-word;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-    .user-message {
-      background: linear-gradient(to right, #fb923c, #f97316);
-      color: white;
-      align-self: flex-end;
-      border-bottom-right-radius: 0.25rem;
-    }
-    .bot-message {
-      background: #ffffff;
-      color: #1e2b3b;
-      align-self: flex-start;
-      border-bottom-left-radius: 0.25rem;
-      border: 1px solid #e2e8f0;
-    }
-    .bot-message a { color: #2563eb; text-decoration: underline; font-weight: 600; }
-    .bot-message ul { list-style-type: disc; padding-left: 1.5rem; margin-top: 0.5rem; margin-bottom: 0.5rem; }
-    .bot-message strong { color: #1d4ed8; }
-    .bot-message p { margin-bottom: 0.5rem; }
-    .hide-scrollbar::-webkit-scrollbar { display: none; }
-    .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cloud Community Day - AI Guide</title>
+    <link rel="icon" href="https://ccd.bhopal.dev/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="https://ccd.bhopal.dev/favicon.ico" type="image/x-icon" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .chat-message {
+            max-width: 85%;
+            padding: 0.75rem 1.25rem;
+            border-radius: 1.25rem;
+            margin-bottom: 0.5rem;
+            line-height: 1.5;
+            word-wrap: break-word;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .user-message {
+            background: linear-gradient(to right, #fb923c, #f97316);
+            color: white;
+            align-self: flex-end;
+            border-bottom-right-radius: 0.25rem;
+        }
+        .bot-message {
+            background: #ffffff;
+            color: #1e2b3b;
+            align-self: flex-start;
+            border-bottom-left-radius: 0.25rem;
+            border: 1px solid #e2e8f0;
+        }
+        .bot-message a { color: #2563eb; text-decoration: underline; font-weight: 600; }
+        .bot-message ul { list-style-type: disc; padding-left: 1.5rem; margin-top: 0.5rem; margin-bottom: 0.5rem; }
+        .bot-message strong { color: #1d4ed8; }
+        .bot-message p { margin-bottom: 0.5rem; }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
 </head>
 <body class="bg-gray-100 flex flex-col h-screen">
-  <!-- Header -->
-  <header class="w-full flex items-center justify-between px-6 py-3 bg-gradient-to-r from-orange-400 via-green-400 to-blue-500 shadow-md z-10">
-    <img src="https://ccd.bhopal.dev/logo.png" alt="Cloud Community Day Logo" class="h-10 w-auto" />
-    <a href="https://ccd.bhopal.dev/" target="_blank" class="text-white font-semibold bg-green-400 hover:bg-green-500 px-4 py-2 rounded-lg shadow transition-transform hover:scale-105">Official Site</a>
-  </header>
+    <!-- Header -->
+    <header class="w-full flex items-center justify-between px-6 py-3 bg-gradient-to-r from-orange-400 via-green-400 to-blue-500 shadow-md z-10">
+        <img src="https://ccd.bhopal.dev/logo.png" alt="Cloud Community Day Logo" class="h-10 w-auto" />
+        <a href="https://ccd.bhopal.dev/" target="_blank" class="text-white font-semibold bg-green-400 hover:bg-green-500 px-4 py-2 rounded-lg shadow transition-transform hover:scale-105">Official Site</a>
+    </header>
 
-  <!-- Main Chat Container -->
-  <main class="flex-1 p-4 overflow-hidden">
-    <div class="w-full max-w-3xl h-full mx-auto bg-white shadow-2xl flex flex-col rounded-lg">
-      <div id="chat-messages" class="flex-1 p-6 space-y-4 overflow-y-auto flex flex-col">
-        <!-- Chat history will be loaded here -->
-      </div>
+    <!-- Main Chat Container -->
+    <main class="flex-1 p-4 overflow-hidden">
+        <div class="w-full max-w-3xl h-full mx-auto bg-white shadow-2xl flex flex-col rounded-lg">
+            <div id="chat-messages" class="flex-1 p-6 space-y-4 overflow-y-auto flex flex-col">
+                <!-- Chat history will be loaded here -->
+            </div>
 
-      <div class="p-4 bg-gray-100 border-t border-gray-200 rounded-b-lg">
-        <!-- Suggestion Chips -->
-        <div class="flex items-center gap-2 overflow-x-auto pb-3 hide-scrollbar">
-            <span class="text-sm font-bold text-gray-500 whitespace-nowrap">✨ Try:</span>
-            <button class="suggestion-chip bg-gray-200 hover:bg-gray-300 text-xs text-gray-700 font-semibold py-1 px-3 rounded-full transition whitespace-nowrap">
-                Who are the speakers?
-            </button>
-            <button class="suggestion-chip bg-gray-200 hover:bg-gray-300 text-xs text-gray-700 font-semibold py-1 px-3 rounded-full transition whitespace-nowrap">
-                What is the agenda?
-            </button>
-            <button class="suggestion-chip bg-gray-200 hover:bg-gray-300 text-xs text-gray-700 font-semibold py-1 px-3 rounded-full transition whitespace-nowrap">
-                Tell me about the discount tickets?
-            </button>
-            <button class="suggestion-chip bg-gray-200 hover:bg-gray-300 text-xs text-gray-700 font-semibold py-1 px-3 rounded-full transition whitespace-nowrap">
-                How is it beneficial for me as a student?
-            </button>
-            <button class="suggestion-chip bg-gray-200 hover:bg-gray-300 text-xs text-gray-700 font-semibold py-1 px-3 rounded-full transition whitespace-nowrap">
-                What is are the technologies we will be discussing about?
-            </button>
-            <button class="suggestion-chip bg-gray-200 hover:bg-gray-300 text-xs text-gray-700 font-semibold py-1 px-3 rounded-full transition whitespace-nowrap">
-                Will there be food?
-            </button>
-            <button class="suggestion-chip bg-gray-200 hover:bg-gray-300 text-xs text-gray-700 font-semibold py-1 px-3 rounded-full transition whitespace-nowrap">
-                What is meant by networking?
-            </button>
+            <div class="p-4 bg-gray-100 border-t border-gray-200 rounded-b-lg">
+                <!-- Suggestion Chips -->
+                <div class="flex items-center gap-2 overflow-x-auto pb-3 hide-scrollbar">
+                    <span class="text-sm font-bold text-gray-500 whitespace-nowrap">✨ Try:</span>
+                    <button class="suggestion-chip bg-gray-200 hover:bg-gray-300 text-xs text-gray-700 font-semibold py-1 px-3 rounded-full transition whitespace-nowrap">
+                      Who are the speakers?
+                  </button>
+                  <button class="suggestion-chip bg-gray-200 hover:bg-gray-300 text-xs text-gray-700 font-semibold py-1 px-3 rounded-full transition whitespace-nowrap">
+                      What is the agenda?
+                  </button>
+                  <button class="suggestion-chip bg-gray-200 hover:bg-gray-300 text-xs text-gray-700 font-semibold py-1 px-3 rounded-full transition whitespace-nowrap">
+                      How is it beneficial for me as a student?
+                  </button>
+                  <button class="suggestion-chip bg-gray-200 hover:bg-gray-300 text-xs text-gray-700 font-semibold py-1 px-3 rounded-full transition whitespace-nowrap">
+                      What is are the technologies we will be discussing about?
+                  </button>
+                  <button class="suggestion-chip bg-gray-200 hover:bg-gray-300 text-xs text-gray-700 font-semibold py-1 px-3 rounded-full transition whitespace-nowrap">
+                      Will there be food?
+                  </button>
+                  <button class="suggestion-chip bg-gray-200 hover:bg-gray-300 text-xs text-gray-700 font-semibold py-1 px-3 rounded-full transition whitespace-nowrap">
+                      What is meant by networking?
+                  </button>
+                </div>
+
+                <!-- Input Form -->
+                <form id="chat-form" class="flex items-center">
+                    <input type="text" id="chat-input" placeholder="Ask 'How will this event help me?'" class="flex-1 bg-white border border-gray-300 text-gray-800 rounded-l-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                    <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-5 rounded-r-lg">Send</button>
+                </form>
+
+                <!-- Location -->
+                <div class="text-center mt-3">
+                    <a href="https://maps.app.goo.gl/1qNi4KHQiivgESWt8" target="_blank" class="text-xs text-blue-800 bg-yellow-200 px-3 py-1 rounded-full shadow hover:bg-yellow-300 transition font-semibold">
+                        📍 Location: Minto Hall, Bhopal
+                    </a>
+                </div>
+            </div>
         </div>
+    </main>
 
-        <!-- Input Form -->
-        <form id="chat-form" class="flex items-center">
-          <input type="text" id="chat-input" placeholder="Ask 'How will this event help me?'" class="flex-1 bg-white border border-gray-300 text-gray-800 rounded-l-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500" />
-          <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-5 rounded-r-lg">Send</button>
-        </form>
+    <!-- Script Logic -->
+    <script>
+        const renderer = new marked.Renderer();
+        renderer.link = function(href, title, text) {
+            return `<a target="_blank" href="${href}" title="${title || ''}">${text}</a>`;
+        };
+        marked.setOptions({ renderer });
 
-        <!-- Location -->
-        <div class="text-center mt-3">
-          <a href="https://maps.app.goo.gl/1qNi4KHQiivgESWt8" target="_blank" class="text-xs text-blue-800 bg-yellow-200 px-3 py-1 rounded-full shadow hover:bg-yellow-300 transition font-semibold">
-            📍 Location: Minto Hall, Bhopal
-          </a>
-        </div>
-      </div>
-    </div>
-  </main>
+        const chatForm = document.getElementById('chat-form');
+        const chatInput = document.getElementById('chat-input');
+        const chatMessages = document.getElementById('chat-messages');
+        const suggestionChips = document.querySelectorAll('.suggestion-chip');
 
-  <!-- Script Logic -->
-  <script>
-    const renderer = new marked.Renderer();
-    renderer.link = function(href, title, text) {
-      return `<a target="_blank" href="${href}" title="${title || ''}">${text}</a>`;
-    };
-    marked.setOptions({ renderer });
-
-    const chatForm = document.getElementById('chat-form');
-    const chatInput = document.getElementById('chat-input');
-    const chatMessages = document.getElementById('chat-messages');
-    const suggestionChips = document.querySelectorAll('.suggestion-chip');
-
-    let sessionId = localStorage.getItem('sessionId');
-    if (!sessionId) {
-      sessionId = crypto.randomUUID();
-      localStorage.setItem('sessionId', sessionId);
-    }
-
-    let chatHistory = [];
-
-    // --- NEW: Function to load history on page start ---
-    async function loadHistory() {
-        try {
-            const response = await fetch('/ask', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ session_id: sessionId })
-            });
-            const data = await response.json();
-            if (data.history && data.history.length > 0) {
-                chatHistory = data.history;
-                chatMessages.innerHTML = ''; // Clear any initial messages
-                chatHistory.forEach(msg => addMessage(msg.message, msg.sender));
-            } else {
-                 addMessage("Hi! I'm the official AI Guide for GCCD Bhopal. Ask me anything about the event!", 'bot');
-            }
-        } catch (error) {
-            console.error("Could not load history:", error);
-            addMessage("Hi! I'm the official AI Guide for GCCD Bhopal. Ask me anything about the event!", 'bot');
+        let sessionId = localStorage.getItem('sessionId');
+        if (!sessionId) {
+            sessionId = crypto.randomUUID();
+            localStorage.setItem('sessionId', sessionId);
         }
-    }
 
-    suggestionChips.forEach(chip => {
-      chip.addEventListener('click', () => {
-        const text = chip.textContent.trim();
-        chatInput.value = text;
-        chatForm.dispatchEvent(new Event('submit'));
-      });
-    });
+        let chatHistory = [];
 
-    chatForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const message = chatInput.value.trim();
-      if (!message) return;
+        // Function to add a message to the chat window
+        function addMessage(text, sender) {
+            const msg = document.createElement('div');
+            msg.className = `chat-message ${sender}-message`;
+            if (sender === 'bot') {
+                msg.innerHTML = marked.parse(text);
+            } else {
+                msg.textContent = text;
+            }
+            chatMessages.appendChild(msg);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
 
-      addMessage(message, 'user');
-      chatHistory.push({ sender: 'user', message });
-      chatInput.value = '';
-      addTypingIndicator();
+        // Function to show the typing indicator
+        function addTypingIndicator() {
+            const typing = document.createElement('div');
+            typing.id = 'typing-indicator';
+            typing.className = 'chat-message bot-message';
+            typing.innerHTML = '<span class="animate-pulse">● ● ●</span>';
+            chatMessages.appendChild(typing);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
 
-      try {
-        const response = await fetch('http://127.0.0.1:5000/ask', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            message,
-            session_id: sessionId,
-            history: chatHistory.slice(-8)
-          })
+        // Function to remove the typing indicator
+        function removeTypingIndicator() {
+            const typing = document.getElementById('typing-indicator');
+            if (typing) typing.remove();
+        }
+        
+        // Function to handle form submission
+        async function handleFormSubmit(e) {
+            e.preventDefault();
+            const message = chatInput.value.trim();
+            if (!message) return;
+
+            addMessage(message, 'user');
+            chatHistory.push({ sender: 'user', message });
+            chatInput.value = '';
+            addTypingIndicator();
+
+            try {
+                // Use a relative path, which works for both local and deployed environments
+                const response = await fetch('/ask', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        message,
+                        session_id: sessionId,
+                        history: chatHistory.slice(-8) // Send recent history for context
+                    })
+                });
+
+                if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+                
+                const data = await response.json();
+                removeTypingIndicator();
+                addMessage(data.reply, 'bot');
+                chatHistory.push({ sender: 'bot', message: data.reply });
+
+            } catch (error) {
+                removeTypingIndicator();
+                addMessage("Sorry, something went wrong. Please try again.", 'bot');
+                console.error("Chatbot Error:", error);
+            }
+        }
+
+        // Add event listeners
+        chatForm.addEventListener('submit', handleFormSubmit);
+
+        suggestionChips.forEach(chip => {
+            chip.addEventListener('click', () => {
+                const text = chip.textContent.trim();
+                chatInput.value = text;
+                chatForm.dispatchEvent(new Event('submit'));
+            });
         });
-
-        const data = await response.json();
-        removeTypingIndicator();
-        addMessage(data.reply, 'bot');
-        chatHistory.push({ sender: 'bot', message: data.reply });
-
-      } catch (error) {
-        removeTypingIndicator();
-        addMessage("Sorry, something went wrong.", 'bot');
-      }
-    });
-
-    function addMessage(text, sender) {
-      const msg = document.createElement('div');
-      msg.className = `chat-message ${sender}-message`;
-      msg.innerHTML = sender === 'bot' ? marked.parse(text) : text;
-      chatMessages.appendChild(msg);
-      chatMessages.scrollTop = chatMessages.scrollHeight;
-    }
-
-    function addTypingIndicator() {
-      const typing = document.createElement('div');
-      typing.id = 'typing-indicator';
-      typing.className = 'chat-message bot-message';
-      typing.innerHTML = '<span class="animate-pulse">● ● ●</span>';
-      chatMessages.appendChild(typing);
-      chatMessages.scrollTop = chatMessages.scrollHeight;
-    }
-
-    function removeTypingIndicator() {
-      const typing = document.getElementById('typing-indicator');
-      if (typing) typing.remove();
-    }
-    
-    // Load history when the page loads
-    document.addEventListener('DOMContentLoaded', loadHistory);
-  </script>
+        
+        // Add the initial welcome message when the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            addMessage("Hi! I'm the official AI Guide for GCCD Bhopal. Ask me anything about the event!", 'bot');
+        });
+    </script>
 </body>
 </html>
