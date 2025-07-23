@@ -1,1 +1,4 @@
 .env
+credentials.json
+chroma_db/chroma.sqlite3
+chroma_db/chroma.sqlite3
