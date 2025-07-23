@@ -1,6 +1,7 @@
 # config.py
 
 import os
+from urllib.parse import quote_plus
 
 class Config:
     """
@@ -12,14 +13,21 @@ class Config:
     # SQLAlchemy configuration
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     
-    # --- Database URI ---
+    # --- Azure SQL Database Connection String ---
     # This is the connection string for your database.
-    # Replace 'your_password' with the actual password for your 'chatbot_user'.
-    # This works for both your local XAMPP and your GCP MySQL server,
-    # as they are both running on 'localhost' from the app's perspective.
-    SQLALCHEMY_DATABASE_URI = 'mysql+mysqlconnector://root:@localhost:3307/chatbot_db'
     
-    # If you ever want to switch back to the simple file-based database for testing,
-    # you can comment out the line above and uncomment the line below.
-    # SQLALCHEMY_DATABASE_URI = 'sqlite:///chat_history.db'
+    DB_USER = "Malay"
+    DB_PASS = "Greenscan@12"
+    DB_SERVER = "greenscanserver.database.windows.net"
+    DB_NAME = "chatbot_db"
+    
+    # URL encode the password to handle special characters like '@'
+    encoded_pass = quote_plus(DB_PASS)
+
+    # The final, correctly formatted and encoded connection string
+    SQLALCHEMY_DATABASE_URI = (
+        f"mssql+pyodbc://{DB_USER}:{encoded_pass}@{DB_SERVER}:1433/{DB_NAME}"
+        "?driver=ODBC+Driver+18+for+SQL+Server"
+        "&Encrypt=yes&TrustServerCertificate=no&Connection+Timeout=30"
+    )
 

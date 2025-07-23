@@ -9,5 +9,5 @@ python-dotenv
 beautifulsoup4
 unstructured
 gunicorn
-Flask-SQLAlchemy
-mysql-connector-python
+gspread
+google-auth-oauthlib
