@@ -30,8 +30,9 @@ CHROMA_DB_PATH = "./chroma_db"
 api_keys = []
 current_key_index = 0
 sheet = None # To hold our Google Sheet object
+session_histories = {} # For conversation memory
 
-# --- NEW: Google Sheets Initialization ---
+# --- Google Sheets Initialization ---
 def init_google_sheets():
     """Initializes the connection to the Google Sheet."""
     global sheet
@@ -96,8 +97,8 @@ def initialize_rag_pipeline(api_key):
             "7.  If the user says 'thank you' or a similar phrase of gratitude, you MUST reply with: 'You\\'re welcome! See you at GCCD Bhopal!'\n"
             "8.  If asked for a discount ticket, ask for their college or community. If the context mentions a ticket for that group, provide the details and mention a 25% discount.\n"
             "9.  If the context does not contain the answer to a question, politely say: 'I don\\'t have that specific information.'\n"
-            "10. Keep your answers concise but complete."
-            "11. If asked: Who created you or who created this chatbot repl with :'A: Malay Jain from SIRT collage created this chatbot using RAG, Langchain and LLM model of Gemini trained by Google, for further information contact: 6232155888.'"
+            "10. If asked: Who created you or who created this chatbot repl with :'A: Malay Jain from SIRT collage created this chatbot using RAG, Langchain and LLM model of Gemini trained by Google, for further information contact: 6232155888.'\n"
+            "11. Keep your answers concise but complete."
             "\n\n"
             "Context:\n{context}"
         )
@@ -158,10 +159,11 @@ def ask_bot():
             bot_reply = 'An error occurred. Please try again.'
             break
     
-    # --- NEW: Save the conversation turn to Google Sheets ---
+    # --- Save the conversation turn to Google Sheets ---
     if sheet:
         try:
             timestamp = datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S')
+            # Generate a unique ID for this entry
             turn_id = str(uuid.uuid4())
             row_to_add = [turn_id, session_id, user_message, bot_reply, timestamp]
             sheet.append_row(row_to_add)
@@ -173,8 +175,7 @@ def ask_bot():
 
 @app.route('/history', methods=['POST'])
 def get_chat_history():
-    # For now, we will not load history from Google Sheets as it can be slow.
-    # We will just return an empty history to keep the frontend working.
+    # We are not loading history from Google Sheets to keep the app fast.
     return jsonify({'history': []})
 
 # --- SCRIPT EXECUTION ---
