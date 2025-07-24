@@ -1,3 +1,89 @@
+
+----- File: D:\ML Folders\ml_env\GitHub\CCD-AI\knowledge_base\about_event.txt -----
+GCCD stands for Google Cloud Community Day. It is a full-day, in-person tech conference run by the community, for the community.
+The main goal of the event is to bring together students, developers, and IT professionals to learn about the latest in Google Cloud and AI technology.
+It is an interactive experience designed to help people connect, share ideas, and grow their skills.
+The event is organized by GDG Bhopal.
+
+----- File: D:\ML Folders\ml_env\GitHub\CCD-AI\knowledge_base\agenda.txt -----
+The event is on August 3rd.
+Registration and welcome coffee starts at 9:00 AM.
+The opening keynote is at 10:00 AM.
+Session Block 1 is at 11:00 AM.
+Lunch and networking break is at 1:00 PM.
+Session Block 2 is at 2:00 PM.
+The closing ceremony and prize distribution is at 5:00 PM.
+
+----- File: D:\ML Folders\ml_env\GitHub\CCD-AI\knowledge_base\agenda_content.txt -----
+Q: Can you tell me about the agenda? / What is the schedule?
+A: The day kicks off with registration at 9 AM, followed by an opening keynote at 10 AM. We have multiple session blocks, a lunch and networking break at 1 PM, and a closing ceremony at 5 PM.
+
+Q: Who are the speakers?
+A: Here are the details for our amazing speakers at GCCD Bhopal:
+- Speaker Name: Biswanath Giri, Title: Cloud and AI Principal Architect, Company: LTIMindtree, Topic: How to Secure AI Workload
+- Speaker Name: Anand Mehta, Title: Senior FinOps Specialist, Company: Nasdaq, Topic: Cloud Intelligence Dashboard
+- Speaker Name: Ashish Kolarkar, Title: CEO, Company: Datatrack, Topic: NotebookLM to Conquer Complex Topics
+- Speaker Name: Kripesh Adwani, Title: CEO, Company: UpSkillAI, Topic: Mastering Google Gemini: Your All-in-One Career Co-Pilot
+- Speaker Name: Sumit Kumar, Title: Cloud Solution Architect, Company: 66degrees, Topic: Protecting AI Agentic Application with Google Model Armor
+- Speaker Name: Parth Arora, Title: Senior Software Engineer, Company: IBM India, Topic: Kubernetes for Beginners: Your First Step into Cloud-Native
+- Speaker Name: Geeta Kakrani, Title: CEO, Founder, Company: Kanishka IT, Topic: From Pretrained to Powerful: Fine-Tune Gemma on GCP Vertex AI
+- Speaker Name: Jyoti Mishra, Title: SDE-4, Company: Evertz Microsystems, Topic: No server, No stress: Build smart cloud workflows the low code way
+- Speaker Name: Saurabh Mishra, Title: DevOps Lead, Company: TSYS, Topic: Building Next-Gen Intelligent Self-Service on Google Cloud
+
+Q: Will the sessions be recorded?
+A: We are planning to record the key sessions. Recordings will be made available on the GDG Bhopal YouTube channel after the event.
+
+Q: How does the networking help?
+A: Of course. Here is a concise answer based on the project's goals:
+Networking at Cloud Community Day (CCD) is the opportunity to build valuable connections. The event is designed with dedicated breaks for lunch and tea to encourage interaction.It helps you by allowing you to:
+Meet industry professionals and speakers for career advice, mentorship, or potential job/internship opportunities.
+Connect with students and peers from different colleges to share ideas and build your professional network.
+
+Q: If i cancel my ticket, will i get my refund?
+A: Unfortunately, we do not offer refunds. However, you can transfer your ticket to someone else.
+
+----- File: D:\ML Folders\ml_env\GitHub\CCD-AI\knowledge_base\community_networking.txt -----
+Q: What are the networking opportunities?
+A: We have dedicated networking breaks during lunch and high tea. The entire event is designed to be interactive, so feel free to connect with speakers and fellow attendees between sessions!
+
+Q: Is there a Code of Conduct?
+A: Yes, absolutely. We are committed to providing a safe, respectful, and inclusive environment for everyone. The full Code of Conduct is available on our website.
+
+
+----- File: D:\ML Folders\ml_env\GitHub\CCD-AI\knowledge_base\creator.txt -----
+Q: Who created you? or Who created this LLM?
+A: Malay Jain from SIRT collage created this chatbot using RA and Langchain, for further information contact: 6232155888.
+
+----- File: D:\ML Folders\ml_env\GitHub\CCD-AI\knowledge_base\general_logistics.txt -----
+Q: What does GCCD stand for?
+A: GCCD stands for Google Cloud Community Day. It's a full-day tech conference organized by the community, for the community!
+
+Q: Who is organizing this event?
+A: The event is proudly organized by GDG Bhopal (Google Developer Group Bhopal).
+
+Q: Who should attend this event?
+A: The event is perfect for students, developers, IT professionals, startup founders, and anyone with a passion for technology, especially Google Cloud and AI.
+
+Q: Where is the event being held?
+A: The event is at the historic Minto Hall in Bhopal. It's a fantastic venue for a day of learning and networking.
+
+Q: where is minto hall?
+A: Minto Hall, now known as Kushabhau Thakre Hall, is located in Bhopal, Madhya Pradesh, India. Specifically, it is situated in the Old Vidhansabha area, opposite Raj Bhawan, also known as the Governor's House. The building is easily accessible and is a prominent landmark in the city. 
+Here's a more detailed breakdown:
+Address: Old Vidhansabha, Minto Hall, Bhopal - 462008. 
+Landmark: Opposite Raj Bhawan (Governor's House). 
+
+Q: What are the event dates and times?
+A: The event is on a single day, August 3rd. The duration is from 9:00 AM to 5:00 PM. Doors open for registration at 9:00 AM, and the event concludes at 5:00 PM.
+
+Q: Is there parking available at the venue?
+A: Yes, Minto Hall has parking facilities available. However, spots can be limited, so arriving a bit early or using ride-sharing services is recommended.
+
+Q: Is the venue accessible for people with disabilities?
+A: Yes, Minto Hall is equipped with facilities to be accessible. Please contact the organizers if you have any specific requirements.
+
+
+----- File: D:\ML Folders\ml_env\GitHub\CCD-AI\knowledge_base\knowledge_base.txt -----
 About the Event
 Q: What is GCCD?
 A: GCCD stands for Google Cloud Community Day. It is a full-day, in-person tech conference organized by the community, for the community. The event is proudly organized by GDG Bhopal. The main goal is to bring together students, developers, and IT professionals to learn about the latest in Google Cloud and AI technology in an interactive experience.
@@ -67,3 +153,84 @@ A: This is a tool used in FinOps (Financial Operations for the cloud) that provi
 
 Q: What is an AI Agentic Application?
 A: This is an advanced type of AI application where the AI acts as an "agent" that can perform tasks autonomously, like a human assistant.
+
+----- File: D:\ML Folders\ml_env\GitHub\CCD-AI\knowledge_base\onsite_experience.txt -----
+Q: Will there be Wi-Fi at the venue?
+A: Yes, complimentary Wi-Fi will be available for all attendees. The network details will be provided at the registration desk.
+
+Q: What should I bring with me?
+A: We recommend bringing a notebook, a pen, and your enthusiasm! You might also want to bring a laptop for any hands-on workshops. Don't forget your digital ticket for check-in.
+
+Q: Will food be provided?
+A: Yes, your ticket includes a delicious lunch as well as tea and coffee during the designated breaks.
+
+Q: Is there a dress code?
+A: There is no strict dress code. Business casual or smart casual is a great choice. Wear whatever you feel comfortable in!
+
+----- File: D:\ML Folders\ml_env\GitHub\CCD-AI\knowledge_base\registration_tickets.txt -----
+Q: How can I register? / Where can I get tickets?
+A: You can register by clicking any of the "Register Now" buttons on our official website. This will take you to our ticketing partner's page.
+
+Q: How much does a ticket cost?
+A: We have different ticket tiers for students and professionals. Please check the registration page on the official website for the most up-to-date pricing.
+
+Q: What's included in the ticket price?
+A: Your ticket includes access to all sessions, a welcome kit with cool swag, lunch, and tea/coffee during the breaks.
+
+Q: Are there any discount tickets?
+A: What collage or community do you belog to?
+
+Q: I belong from {collage or commuity} .
+A: You can apply following coupen code:
+Code Name
+ORIENTAL25
+SAGE25
+WPBHOPAL25
+AIESEC25
+JNCT25
+GDGINDORE25
+LNCTE25
+BHOPALDOTDEV25
+TECHHELP4U25
+SIRT25
+MITS-DU25
+DAO25
+OIST25
+SOIT25
+SISTEC25
+GYANGANGA25
+VIT25
+LNCTS25
+LNCT25
+COMMUNITY25
+
+----- File: D:\ML Folders\ml_env\GitHub\CCD-AI\knowledge_base\technology_learning.txt -----
+Q: How will this event help me as a student?
+A: You'll gain practical knowledge beyond your curriculum and get hands-on experience in coding challenges. It's also a fantastic opportunity to connect directly with industry professionals for potential internships or jobs, network with peers from different colleges, and discover exciting career paths you might not have considered.
+
+Q: What is Google Gemini?
+A: Gemini is Google's most advanced family of AI models. It's multimodal, meaning it can understand and work with not just text, but also code, images, and video. As a student, understanding Gemini can help you build powerful AI projects and make you a very attractive candidate for modern tech roles.
+
+Q: What are Gemma and Vertex AI?
+A: Gemma is a family of powerful and lightweight AI models from Google. Vertex AI is Google Cloud's platform where you can easily use, manage, and fine-tune models like Gemma to build your own custom AI applications. Learning this is a direct path to building real-world AI solutions.
+
+Q: What is NotebookLM?
+A: NotebookLM is an AI-powered research and writing assistant from Google. It helps you understand and synthesize complex topics by connecting your notes and sources to a language model. For students, it's an incredible tool for studying and getting insights from your course materials.
+
+Q: What is Kubernetes?
+A: Kubernetes is an open-source system for automating the deployment and scaling of containerized applications. Think of it as a powerful 'operating system' for the cloud. Knowing Kubernetes is a highly in-demand skill for DevOps and Cloud Engineering roles.
+
+Q: What is a "low-code" approach?
+A: Low-code is a way of building applications using visual interfaces and drag-and-drop components instead of writing traditional code. This allows you to build and deploy smart workflows and applications much faster. It's a great skill for rapid prototyping.
+
+Q: What is Google Model Armor?
+A: Google Model Armor is a set of security services on Google Cloud. It's designed to protect AI applications from potential threats, ensuring they are safe and reliable. Understanding this is important for anyone who wants to build production-ready AI systems.
+
+Q: What is an AI Workload?
+A: An "AI Workload" refers to all the computing tasks and processes involved in running an AI application, like training a model or making predictions. Securing this workload means protecting the AI model itself, the data it uses, and the infrastructure it runs on from unauthorized access or attacks.
+
+Q: What is a Cloud Intelligence Dashboard?
+A: This is a tool used in FinOps (Financial Operations for the cloud) that provides a visual overview of a company's cloud spending. It helps teams understand costs, identify savings opportunities, and make smarter financial decisions about their cloud usage.
+
+Q: What is an AI Agentic Application?
+A: This is an advanced type of AI application where the AI acts as an "agent" that can perform tasks autonomously. Instead of just answering a question, it can take actions, use tools, and work towards a goal with multiple steps, much like a human assistant.

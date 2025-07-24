@@ -1,4 +1,0 @@
-GCCD stands for Google Cloud Community Day. It is a full-day, in-person tech conference run by the community, for the community.
-The main goal of the event is to bring together students, developers, and IT professionals to learn about the latest in Google Cloud and AI technology.
-It is an interactive experience designed to help people connect, share ideas, and grow their skills.
-The event is organized by GDG Bhopal.
