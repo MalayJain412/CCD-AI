@@ -29,8 +29,27 @@ A: Here are the details for our amazing speakers at GCCD Bhopal:
 - Speaker Name: Geeta Kakrani, Title: CEO, Founder, Company: Kanishka IT, Topic: From Pretrained to Powerful: Fine-Tune Gemma on GCP Vertex AI
 - Speaker Name: Jyoti Mishra, Title: SDE-4, Company: Evertz Microsystems, Topic: No server, No stress: Build smart cloud workflows the low code way
 - Speaker Name: Saurabh Mishra, Title: DevOps Lead, Company: TSYS, Topic: Building Next-Gen Intelligent Self-Service on Google Cloud
-- Poorvi Arora  
-- Antrixsh Gupta
+- Speaker Name: Antrixsh Gupta, Title:Principal AI Architect, Company: Genzeon, Topic: Say Hi to Agents: Welcome to the Era of Agentic AI- Antrixsh Gupta
+- Speaker Name: Poorvi Arora, Title: Delivery Manager, Company: Technoduxx, Topic: Design Thinking & Transforming Business
+
+Q: Who are the community partners?
+A: Community Partners
+
+    1. GDSC On Campus – LNCTS
+    2. GDSC On Campus – LNCTE
+    3. GDSC On Campus – SOIT 
+    4. GDSC On Campus – SIRT
+    5. GDSC On Campus – SISTec
+    6. GDSC On Campus – VIT Bhopal
+    7. GDSC On Campus – OIST
+    8. GDSC On Campus – MITS Gwalior
+    9. GDSC On Campus – GGITS
+    10. AIESEC Bhopal
+    11. Techhelp4u
+    12. WordPress Bhopal
+    13. ML Bhopal
+    14. Bhopal DAO
+    15. I am Startup
 
 Q: Will the sessions be recorded?
 A: We are planning to record the key sessions. Recordings will be made available on the GDG Bhopal YouTube channel after the event.
