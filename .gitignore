@@ -2,3 +2,4 @@
 credentials.json
 chroma_db/chroma.sqlite3
 chroma.sqlite3
+*.txt

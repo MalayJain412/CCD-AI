@@ -29,6 +29,8 @@ A: Here are the details for our amazing speakers at GCCD Bhopal:
 - Speaker Name: Geeta Kakrani, Title: CEO, Founder, Company: Kanishka IT, Topic: From Pretrained to Powerful: Fine-Tune Gemma on GCP Vertex AI
 - Speaker Name: Jyoti Mishra, Title: SDE-4, Company: Evertz Microsystems, Topic: No server, No stress: Build smart cloud workflows the low code way
 - Speaker Name: Saurabh Mishra, Title: DevOps Lead, Company: TSYS, Topic: Building Next-Gen Intelligent Self-Service on Google Cloud
+- Poorvi Arora  
+- Antrixsh Gupta
 
 Q: Will the sessions be recorded?
 A: We are planning to record the key sessions. Recordings will be made available on the GDG Bhopal YouTube channel after the event.
