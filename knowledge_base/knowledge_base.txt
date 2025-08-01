@@ -116,9 +116,6 @@ A: The event is at the historic Minto Hall in Bhopal, an iconic landmark known f
 Q: When is the event?
 A: The event is on a single day, August 3rd, from 9:00 AM to 5:00 PM.
 
-Q: What is the event schedule?
-A: The day kicks off with registration at 9 AM, followed by an opening keynote at 10 AM. We have multiple session blocks, a lunch and networking break at 1 PM, and a closing ceremony at 5 PM.
-
 Q: Will food be provided?
 A: Yes, your ticket includes a delicious lunch as well as tea and coffee during the designated breaks.
 
@@ -255,3 +252,136 @@ A: This is a tool used in FinOps (Financial Operations for the cloud) that provi
 
 Q: What is an AI Agentic Application?
 A: This is an advanced type of AI application where the AI acts as an "agent" that can perform tasks autonomously. Instead of just answering a question, it can take actions, use tools, and work towards a goal with multiple steps, much like a human assistant.
+
+Q: Who are the main organizers?
+A:  👤 Aditya Shah
+
+    Role: GDG Organizer & Lead
+
+    Company: Incsub LLC
+
+    About: Passionate about building inclusive tech communities and empowering developers with cloud technologies.
+
+    Skills: Community Building, DevOps, Developer Relations
+
+    👤 Mayur Rathi
+
+    Role: Co-Organizer
+
+    Company: Capgemini
+
+    About: Experienced software engineer with a passion for cloud architecture and developer community engagement.
+
+    Skills: Cloud Architecture, DevOps, Team Leadership
+
+Q: Who are the core team members?
+A:  Team Member: Shashank Jain, Role: Social Media, Profession: Student, 
+
+    Team Member: Shivam Mishra, Role: Volunteer Lead, Profession: Professional, 
+
+    Team Member: Akshita Gupta, Role: Social Media, Profession: Professional, 
+
+    Team Member: Deepali Pathak, Role: Content Management, Profession: Student, 
+
+    Team Member: Aditya Kushwaha, Role: Graphics/Video Editing, Profession: Student, 
+
+    Team Member: Parv Baldua, Role: Graphics/Video Editing, Profession: Student, 
+
+    Team Member: Krishika Verma, Role: Anchoring, Profession: Student, 
+
+    Team Member: Md Farid, Role: Event Management, Profession: Student, 
+
+    Team Member: Malay Jain, Role: Event Management, Profession: Student, 
+
+    Team Member: Ninay Jain, Role: Event Management, Profession: Student, 
+
+    Team Member: Ishan Bijlani, Role: Event Management, Profession: Student, 
+
+    Team Member: Prem Raj, Role: Social Media, Profession: Student, 
+
+    Team Member: Mahak Rathi, Role: Outreach, Profession: Student, 
+
+    Team Member: Anshika Urmaliya, Role: Event Management, Profession: Student, 
+
+    Team Member: Vansh Rathi, Role: Promotion, Profession: Student, 
+
+
+Q: Can I join the team?
+A:  Yes!
+    We're always looking for passionate individuals who want to contribute to the Google Cloud community in Bhopal. Whether you're into organizing, volunteering, or speaking, there's a spot for you.
+
+    📞 Contact Us
+    🤝 Join the Community
+
+Q: What is the event Schedule?
+A: Conference Schedule
+    Sunday, August 3rd, 2025
+    Venue: Kushabhau Thakre International Convention Centre (Minto Hall), Bhopal
+
+    Morning Session
+    9:00 AM – 10:00 AM
+    Registration & Networking
+    Attendees arrive, complete registration, and connect with peers.
+
+    10:00 AM – 10:15 AM
+    Inaugural Keynote & Organizers' Remarks
+    Opening address by the organizing committee, setting the tone for the day.
+
+    10:15 AM – 10:25 AM
+    Chief Guest's Keynote Address
+
+    Technical Sessions – Block 1: The Agentic Age & AI Applications
+    10:30 AM – 10:55 AM
+    Session 1: NotebookLM to Conquer Complex Topics
+    Speaker: Ashish Kolarkar, CEO, Datatrack
+
+    11:00 AM – 11:25 AM
+    Session 2: Mastering Google Gemini: Your All-in-One Career Co-Pilot
+    Speaker: Kripesh Adwani, CEO, UpSkillAI
+
+    11:30 AM – 11:55 AM
+    Session 3: From Pretrained to Powerful: Fine-Tune Gemma on GCP Vertex AI
+    Speaker: Geeta Kakrani, CEO & Founder, Kanishka IT
+
+    12:00 PM – 12:25 PM
+    Session 4: Building Next-Gen Intelligent Self-Service on Google Cloud
+    Speaker: Saurabh Mishra, DevOps Lead, TSYS
+
+    Lunch Break
+    12:45 PM – 2:15 PM
+    Lunch & Networking
+    Dedicated time to enjoy lunch and engage with fellow attendees.
+
+    Technical Sessions – Block 2: Cloud Infrastructure, Operations & Modern Development
+    2:15 PM – 2:40 PM
+    Session 5: How to Secure AI Workload
+    Speaker: Biswanath Giri, Cloud & AI Principal Architect, LTIMindtree
+
+    2:45 PM – 3:10 PM
+    Session 6: Kubernetes for Beginners: Your First Step into Cloud-Native
+    Speaker: Parth Arora, Senior Software Engineer, IBM India
+
+    3:15 PM – 3:40 PM
+    Session 7: No Server, No Stress: Build Smart Cloud Workflows the Low-Code Way
+    Speaker: Jyoti Mishra, SDE-4, Evertz Microsystems
+
+    3:45 PM – 4:10 PM
+    Session 8: Cloud Intelligence Dashboard
+    Speaker: Anand Mehta, Senior FinOps Specialist, Nasdaq
+
+    4:15 PM – 4:30 PM
+    Session 9: Design Thinking and Transforming Business
+    Speaker: Poorvi Arora, Delivery Manager, Technoduxx
+
+    Panel Discussion
+    4:35 PM – 5:15 PM
+    Topic: The Agentic Age & Future Workforce: An Ecosystem Dialogue
+    Panelists include IT leaders, startup founders, coaching institute representatives, and the director of the Global Skill Park.
+
+    Concluding Session
+    5:15 PM – 5:30 PM
+    Closing Remarks & Vote of Thanks
+    Organizers provide a summary, thank speakers and attendees, and announce future events.
+
+    5:30 PM onwards
+    Swag Distribution, Networking & Departure
