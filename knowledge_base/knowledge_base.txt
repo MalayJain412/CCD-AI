@@ -67,8 +67,6 @@ A: We have dedicated networking breaks during lunch and high tea. The entire eve
 Q: Is there a Code of Conduct?
 A: Yes, absolutely. We are committed to providing a safe, respectful, and inclusive environment for everyone. The full Code of Conduct is available on our website.
 
-
-
 Q: Who created you? or Who created this LLM?
 A: Malay Jain from SIRT collage created this chatbot using RA and Langchain, for further information contact: 6232155888.
 
@@ -183,7 +181,7 @@ Q: Is there a dress code?
 A: There is no strict dress code. Business casual or smart casual is a great choice. Wear whatever you feel comfortable in!
 
 
-Q: How can I register? / Where can I get tickets?
+Q: How can I register? / Where can I get tickets/How can I get the tickets?
 A: Unfortunatelly tickets are sold out now?
 
 Q: How will this event help me as a student?
