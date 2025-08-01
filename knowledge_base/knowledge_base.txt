@@ -1,11 +1,8 @@
-
------ File: D:\ML Folders\ml_env\GitHub\CCD-AI\knowledge_base\about_event.txt -----
 GCCD stands for Google Cloud Community Day. It is a full-day, in-person tech conference run by the community, for the community.
 The main goal of the event is to bring together students, developers, and IT professionals to learn about the latest in Google Cloud and AI technology.
 It is an interactive experience designed to help people connect, share ideas, and grow their skills.
 The event is organized by GDG Bhopal.
 
------ File: D:\ML Folders\ml_env\GitHub\CCD-AI\knowledge_base\agenda.txt -----
 The event is on August 3rd.
 Registration and welcome coffee starts at 9:00 AM.
 The opening keynote is at 10:00 AM.
@@ -14,7 +11,7 @@ Lunch and networking break is at 1:00 PM.
 Session Block 2 is at 2:00 PM.
 The closing ceremony and prize distribution is at 5:00 PM.
 
------ File: D:\ML Folders\ml_env\GitHub\CCD-AI\knowledge_base\agenda_content.txt -----
+
 Q: Can you tell me about the agenda? / What is the schedule?
 A: The day kicks off with registration at 9 AM, followed by an opening keynote at 10 AM. We have multiple session blocks, a lunch and networking break at 1 PM, and a closing ceremony at 5 PM.
 
@@ -63,7 +60,7 @@ Connect with students and peers from different colleges to share ideas and build
 Q: If i cancel my ticket, will i get my refund?
 A: Unfortunately, we do not offer refunds. However, you can transfer your ticket to someone else.
 
------ File: D:\ML Folders\ml_env\GitHub\CCD-AI\knowledge_base\community_networking.txt -----
+
 Q: What are the networking opportunities?
 A: We have dedicated networking breaks during lunch and high tea. The entire event is designed to be interactive, so feel free to connect with speakers and fellow attendees between sessions!
 
@@ -71,11 +68,11 @@ Q: Is there a Code of Conduct?
 A: Yes, absolutely. We are committed to providing a safe, respectful, and inclusive environment for everyone. The full Code of Conduct is available on our website.
 
 
------ File: D:\ML Folders\ml_env\GitHub\CCD-AI\knowledge_base\creator.txt -----
+
 Q: Who created you? or Who created this LLM?
 A: Malay Jain from SIRT collage created this chatbot using RA and Langchain, for further information contact: 6232155888.
 
------ File: D:\ML Folders\ml_env\GitHub\CCD-AI\knowledge_base\general_logistics.txt -----
+
 Q: What does GCCD stand for?
 A: GCCD stands for Google Cloud Community Day. It's a full-day tech conference organized by the community, for the community!
 
@@ -104,7 +101,7 @@ Q: Is the venue accessible for people with disabilities?
 A: Yes, Minto Hall is equipped with facilities to be accessible. Please contact the organizers if you have any specific requirements.
 
 
------ File: D:\ML Folders\ml_env\GitHub\CCD-AI\knowledge_base\knowledge_base.txt -----
+
 About the Event
 Q: What is GCCD?
 A: GCCD stands for Google Cloud Community Day. It is a full-day, in-person tech conference organized by the community, for the community. The event is proudly organized by GDG Bhopal. The main goal is to bring together students, developers, and IT professionals to learn about the latest in Google Cloud and AI technology in an interactive experience.
@@ -172,7 +169,7 @@ A: This is a tool used in FinOps (Financial Operations for the cloud) that provi
 Q: What is an AI Agentic Application?
 A: This is an advanced type of AI application where the AI acts as an "agent" that can perform tasks autonomously, like a human assistant.
 
------ File: D:\ML Folders\ml_env\GitHub\CCD-AI\knowledge_base\onsite_experience.txt -----
+
 Q: Will there be Wi-Fi at the venue?
 A: Yes, complimentary Wi-Fi will be available for all attendees. The network details will be provided at the registration desk.
 
@@ -185,44 +182,10 @@ A: Yes, your ticket includes a delicious lunch as well as tea and coffee during 
 Q: Is there a dress code?
 A: There is no strict dress code. Business casual or smart casual is a great choice. Wear whatever you feel comfortable in!
 
------ File: D:\ML Folders\ml_env\GitHub\CCD-AI\knowledge_base\registration_tickets.txt -----
+
 Q: How can I register? / Where can I get tickets?
-A: You can register by clicking any of the "Register Now" buttons on our official website. This will take you to our ticketing partner's page.
+A: Unfortunatelly tickets are sold out now?
 
-Q: How much does a ticket cost?
-A: We have different ticket tiers for students and professionals. Please check the registration page on the official website for the most up-to-date pricing.
-
-Q: What's included in the ticket price?
-A: Your ticket includes access to all sessions, a welcome kit with cool swag, lunch, and tea/coffee during the breaks.
-
-Q: Are there any discount tickets?
-A: What collage or community do you belog to?
-
-Q: I belong from {collage or commuity} .
-A: You can apply following coupen code:
-Code Name
-ORIENTAL25
-SAGE25
-WPBHOPAL25
-AIESEC25
-JNCT25
-GDGINDORE25
-LNCTE25
-BHOPALDOTDEV25
-TECHHELP4U25
-SIRT25
-MITS-DU25
-DAO25
-OIST25
-SOIT25
-SISTEC25
-GYANGANGA25
-VIT25
-LNCTS25
-LNCT25
-COMMUNITY25
-
------ File: D:\ML Folders\ml_env\GitHub\CCD-AI\knowledge_base\technology_learning.txt -----
 Q: How will this event help me as a student?
 A: You'll gain practical knowledge beyond your curriculum and get hands-on experience in coding challenges. It's also a fantastic opportunity to connect directly with industry professionals for potential internships or jobs, network with peers from different colleges, and discover exciting career paths you might not have considered.
 
