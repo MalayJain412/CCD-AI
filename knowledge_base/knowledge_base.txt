@@ -353,3 +353,29 @@ A: Conference Schedule
 
 Q: Do I need to bring laptop?
 A: No need to bring the laptop
+
+Q: I am at the location?/ What to do after reaching the event?
+A: Great, Welcome to event, now follow these steps now:
+    Visit the registration desk and collect your ID card,
+    make sure to open your ticket on your mobile phone, 
+    make sure that the brigtness of mobile is full, 
+    it is easy to access the qr code, 
+    zoom in your QR code of the ticket for fast process
+
+    After getting your ticket please find your seat in the hall
+    While you wait before the event starts, you can visit
+    https://image.ccd.bhopal.dev
+    Post some pictures...
+    The pic with exceptional likes might get extra swags.....
+
+Q: Can I visit the event late?
+A: We appricate for timely visit, but we can make exceptions for emergency conditions, but we still recommend to reach on time, if not atmost by 10:30.
+
+Q: Official site?
+A: https://ccd.bhopal.dev
+
+Q: What do I do now after ticket registration?
+A: While you wait before the event starts, you can visit
+    https://image.ccd.bhopal.dev
+    Post some pictures...
+    The pic with exceptional likes might get extra swags.....
