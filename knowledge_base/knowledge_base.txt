@@ -236,7 +236,11 @@ A:  👤 Aditya Shah
     Skills: Cloud Architecture, DevOps, Team Leadership
 
 Q: Who are the core team members?
-A:  Team Member: Shashank Jain, Role: Social Media, Profession: Student, 
+A:  Aditya Shah    Role: GDG Organizer & Lead
+
+    Mayur Rathi    Role: Co-Organizer
+
+    Team Member: Shashank Jain, Role: Social Media, Profession: Student, 
 
     Team Member: Shivam Mishra, Role: Volunteer Lead, Profession: Professional, 
 
@@ -346,3 +350,6 @@ A: Conference Schedule
 
     5:30 PM onwards
     Swag Distribution, Networking & Departure
+
+Q: Do I need to bring laptop?
+A: No need to bring the laptop
