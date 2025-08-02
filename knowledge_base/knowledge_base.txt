@@ -364,7 +364,7 @@ A: Great, Welcome to event, now follow these steps now:
 
     After getting your ticket please find your seat in the hall
     While you wait before the event starts, you can visit
-    image.ccd.bhopal.dev {https://image.ccd.bhopal.dev}
+    image.ccd.bhopal.dev
     Post some pictures...
     The pic with exceptional likes might get extra swags.....
 
@@ -372,11 +372,11 @@ Q: Can I visit the event late?
 A: We appricate for timely visit, but we can make exceptions for emergency conditions, but we still recommend to reach on time, if not atmost by 10:30.
 
 Q: Official site?
-A: ccd.bhopal.dev {https://ccd.bhopal.dev}
+A: ccd.bhopal.dev
     It is in top right corner of the chatbot.....
-    
+
 Q: What do I do now after ticket registration?
 A: While you wait before the event starts, you can visit
-    image.ccd.bhopal.dev {https://image.ccd.bhopal.dev}
+    image.ccd.bhopal.dev
     Post some pictures...
     The pic with exceptional likes might get extra swags.....
